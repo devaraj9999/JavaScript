@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Event Loop</title>
+  <link rel="stylesheet" href="EventLoop.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>JavaScript Event Loop</h1>
+    <p>Understand how JavaScript handles asynchronous operations using the event loop.</p>
+
+    <section class="card">
+      <h2>What is the Event Loop?</h2>
+      <p>The Event Loop is the mechanism that allows JavaScript to perform non-blocking operations despite being single-threaded. It manages:</p>
+      <ul>
+        <li>The <strong>Call Stack</strong> (where functions run)</li>
+        <li>The <strong>Web APIs</strong> (like setTimeout, fetch)</li>
+        <li>The <strong>Callback Queue</strong> (tasks waiting to run)</li>
+        <li>The <strong>Microtask Queue</strong> (Promise callbacks, higher priority)</li>
+      </ul>
+
+      <h3>Example:</h3>
+      <pre><code>
+            console.log("Start");
+
+            setTimeout(() => {
+                       console.log("setTimeout callback");
+                  }, 1000);
+
+             Promise.resolve().then(() => {
+            console.log("Promise resolved");
+         });
+
+               console.log("End");
+
+      </code></pre>
+    </section>
+  </div>
+
+  <script src="EventLoop.js"></script>
+</body>
+</html>
