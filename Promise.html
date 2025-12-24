@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript promises</title>
+  <link rel="stylesheet" href="Promise.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>JavaScript Event Loop Demo</h2>
+    <p>Click the button to see how synchronous code, promises, and setTimeout interact in the event loop.</p>
+    <button onclick="runDemo()">Run Demo</button>
+    <div class="output" id="output">
+        <h3>Example:</h3>
+      <pre><code>
+           const promiseExample = new Promise((resolve, reject) => {
+                     setTimeout(() => {
+                    resolve("✅ Promise resolved after 1 second");
+            }, 1000);
+  });
+
+           promiseExample.then(msg => console.log(msg));
+
+          // Microtask queue demo
+              Promise.resolve().then(() => {
+               console.log("2️⃣ Immediate Promise resolved (microtask queue)");
+         });
+
+          // Task queue demo
+           setTimeout(() => {
+                  console.log("3️⃣ setTimeout callback (task queue)");
+           }, 0);
+
+      </code></pre>
+    </div>
+  </div>
+
+  <script src="Promise.js"></script>
+</body>
+</html>
