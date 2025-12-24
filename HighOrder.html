@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>High Order Functions</title>
+  <link rel="stylesheet" href="HighOrder.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>High Order Functions</h1>
+    <p>Explore the concept of high order functions in JavaScript.</p>
+
+    <section class="card">
+      <h2>What is a Higher-Order Function?</h2>
+      <p>A higher-order function is a function that either:</p>
+      <ul>
+        <li>Takes another function as an argument</li>
+        <li>Returns a new function</li>
+      </ul>
+
+      <h3>Example:</h3>
+      <pre><code>
+// Passing a function as an argument
+function greet(name) {
+     return `Hello, ${name}!`; 
+    }
+
+function run(callback) { 
+    return callback("Alice");
+ }
+console.log(run(greet)); // "Hello, Alice!"
+      </code></pre>
+    </section>
+  </div>
+
+  <script src="HighOrder.js"></script>
+</body>
+</html>
